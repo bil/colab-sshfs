@@ -1,4 +1,4 @@
-# colab_sshfs
+# colab-sshfs
 
 ## sshfs mounts for Google Colaboratory
 
