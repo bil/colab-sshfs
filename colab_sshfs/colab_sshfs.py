@@ -1,6 +1,6 @@
 import os, subprocess
 
-def mount(remote, local='/content/sshfs', sshopts='StrictHostKeyChecking=no'):
+def mount(remote, local='/content/sshfs', sshopts='StrictHostKeyChecking=no,GSSAPIAuthentication=yes'):
     """
     Mount an sshfs remote on Google Colaboratory
 
