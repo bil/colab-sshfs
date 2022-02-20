@@ -1,6 +1,6 @@
 import pathlib, setuptools
 
-VERSION = '0.0.3'
+VERSION = '0.0.4'
 
 pwd = pathlib.Path(__file__).parent
 long_description = (pwd / "README.md").read_text()
