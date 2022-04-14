@@ -1,6 +1,6 @@
 import os, subprocess
 
-def mount(remote, local='/content/sshfs', sshopts='StrictHostKeyChecking=no,GSSAPIAuthentication=yes'):
+def mount(remote, local='/content/sshfs', opts='follow_symlinks,transform_symlinks,StrictHostKeyChecking=no,GSSAPIAuthentication=yes'):
     """
     Mount an sshfs remote on Google Colaboratory
 
@@ -17,7 +17,7 @@ def mount(remote, local='/content/sshfs', sshopts='StrictHostKeyChecking=no,GSSA
     local   : string
               local path to mount to
               will be created if does not exist
-    sshopts : SSH options to pass
+    opts    : options to pass
 
     Returns
     -----------
@@ -33,7 +33,7 @@ def mount(remote, local='/content/sshfs', sshopts='StrictHostKeyChecking=no,GSSA
 
     os.makedirs(local, exist_ok=True)
 
-    cp = subprocess.run(['sshfs', '-o', sshopts, remote, local], capture_output=True)
+    cp = subprocess.run(['sshfs', '-o', opts, remote, local], capture_output=True)
 
     if cp.returncode:
         print('Mount failed, see returned CompletedProcess instance for details')
